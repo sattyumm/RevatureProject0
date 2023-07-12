@@ -1,0 +1,26 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  
+
+  "users":[
+  {
+    "name": "satyam",
+    "email": "satyam@123",
+    "password": "123",
+    "id":1
+  }
+]
+}

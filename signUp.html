@@ -1,0 +1,20 @@
+<h1 style="text-align: center;" >Sign Up</h1>
+<div class="container">
+<label for="username">Name:</label>
+                <input type="text" name="" id="username" ng-model="$parent.username">
+                <!-- {{username}} -->
+                <br><br>
+                <label for="useremail">Email:</label>
+                <input type="text" id="useremail" ng-model="$parent.useremail">
+                <!-- {{useremail}} -->
+                <br><br>
+                <label for="userpass">Password:</label>
+                <input type="text" name="" id="userpass" ng-model="$parent.userpass">
+                <!-- {{userpass}} -->
+                <br>
+                <br>
+                <button ng-click="signUp()">Register</button>
+                <br>
+                Already an User?
+<a ng-href="#/signin">signin</a>
+</div>

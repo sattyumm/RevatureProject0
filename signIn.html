@@ -1,0 +1,18 @@
+<header><h3 style="text-align: center;">NASA-POTD</h3></header>
+<link rel="stylesheet" ng-href="index.css">
+<div class="container">
+<form>
+<label for="useremail">Email:</label>
+<input type="text" id="useremail" ng-model="$parent.useremail">
+<br><br>
+<label for="userpass">Password:</label>
+<input type="text" id="userpass" ng-model="$parent.userpass">
+<br>
+<br>
+<button ng-click="signIn()">SignIn</button>
+<br>
+New user?
+<a href="#/signup">sign up</a>
+</form>
+</div>
+
