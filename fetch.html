@@ -14,7 +14,7 @@
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand"
-      href="https://pbs.twimg.com/profile_images/1648759833175412737/eoJqXu6W_400x400.jpg">NASA-POTD</a>
+      href="https://pbs.twimg.com/profile_images/1648759833175412737/eoJqXu6W_400x400.jpg">NASA-POTD Dashboard</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -25,61 +25,52 @@
         <li class="nav-item active">
           <a class="nav-link" href="#/login">New Login <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+         
+        <li class="nav-item active">
+          <a class="nav-link" href="#/signup">New SignUp<span class="sr-only">(current)</span></a>
         </li>
-        <!-- <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li> -->
+        
         <li class="nav-item">
           <a class="nav-link disabled" href="#/signin">LogOut</a>
         </li>
       </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
+     
     </div>
   </nav>
-  <!-- <div controller="fetchCtrl">
-    <button ng-click="fetchData()">click to fetch</button>
-    <img ng-src="{{imageUrl}}" alt="NASA Image">
-   
-    <ul>
-        <li ng-repeat="item in data"> {{item}}</li>
-        
-      </ul>
-    </div> -->
+  
   <div ng-controller="fetchCtrl">
     <input type="text" ng-model="selectedDate" placeholder="YYYY MM DD" ng-change="formatDate()" maxlength="10">
-    <button ng-click="fetchData()">Watch Image</button>
+    <button ng-click="fetchData()">Click to load</button>
     <div ng-if="apodData">
       <h2>{{apodData.title}}</h2>
       <div class="center">
       <img ng-src="{{imageUrl}}" alt="NASA APOD">
+      
     </div>
-      <p>{{apodData.explanation}}</p>
+    <h4>Explanation:</h4>
+      <p style="background-color: aquamarine;">{{apodData.explanation}}</p>
     </div>
     <div ng-if="!apodData">
-      <p>No APOD found for the selected date.</p>
+      <p>Enter date</p>
     </div>
   </div>
+  <div ng-app="app" ng-controller="DataController">
+    <div ng-if="isLoggedIn">
+        <button ng-click="fetchData()">Fetch Data</button>
+        <ul>
+          <li ng-repeat="item in data">{{ item }}</li>
+        </ul>
+      </div>
+    </div>
+</div>
 
 </body>
+<footer style="text-align: center;">
+  <pre>Astronomy Picture Of the day
+     Source: NASA
+  </pre>
+</footer>
 
 </html>
 
 
-<!-- <h3>welcome-user,click to see NASA-POTD</h3>
-
-<a href="#/signin">logOut</a> -->
-<!-- <a ng-href="#/dashboard">open dashboard</a>
-<a ng-href="#/signup">open signup</a> -->
