@@ -18,28 +18,13 @@ app.config(['$routeProvider', function ($routeProvider) {
 }]);
 
 
-// app.controller("fetchCtrl", ["$scope", "$http", function ($scope, $http) {
-//     $scope.data = []; // Array to store the fetched data
-//     $scope.imageUrl = '';
 
-//     $scope.fetchData = function () {
-//         console.log("inside fetch data");
-//         $http.get("https://api.nasa.gov/planetary/apod?api_key=323RvwaltFIaZ5jtipyUbm2uheUDzybfLdjbvzUg")
-//             .then(function (response) {
-//                 console.log(response.data);
-//                 $scope.imageUrl = response.data.url;
-//                 $scope.data = response.data; // Assign the fetched data to $scope.data
-//             })
-//             .catch(function (error) {
-//                 console.log(error);
-//             });
-//     };
-// }]);
 app.controller("fetchCtrl", ["$scope", "$http", function($scope, $http) {
     $scope.imageUrl = ''; // Variable to store the image URL
     $scope.apodData = null; // Variable to store the APOD data
   
     $scope.fetchData = function() {
+        
       var apiKey = "323RvwaltFIaZ5jtipyUbm2uheUDzybfLdjbvzUg";
       var date = $scope.selectedDate; // Get the selected date from the input field or date picker
   
@@ -84,7 +69,7 @@ app.controller('signInCtrl', ['$scope', '$location', 'userService', function ($s
             if (flag) {
                 $scope.failed = true;
                 console.log("Failed");
-                alert("wrong password");
+                alert("wrong credentials");
 
             }
         });
@@ -93,6 +78,8 @@ app.controller('signInCtrl', ['$scope', '$location', 'userService', function ($s
 }]);
 //signUp
 app.controller('signUpCtrl', ['$scope', '$location', 'userService', function ($scope, $location, userService) {
+
+    
 
     $scope.redirect = function () {
         $location.path('/signin');
